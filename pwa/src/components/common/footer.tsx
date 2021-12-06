@@ -25,7 +25,7 @@ export default function Footer() {
                 href="mailto:gemeente@nijmegen.nl"
                 className="utrecht-link utrecht-link--telephone"
               >
-                ifo@demodam.nl
+                info@demodam.nl
               </a>
             </div>
           </div>
@@ -43,9 +43,9 @@ export default function Footer() {
               </p>
             </div>
           </div>
-          <div className="col-12 ml-auto fit-content">
+          {/* <div className="col-12 ml-auto fit-content">
             <ThemeSwitcher />
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
