@@ -26,4 +26,28 @@
 .fit-content {
     width: fit-content !important;
 }
+.nijmegen-login-button {
+    width: 265px;
+    display: block;
+    text-decoration: none !important;
+    margin-top: 20px;
+}
+
+.nijmegen-login-button:hover {
+    text-decoration: none !important;
+}
+
+.nijmegen-login-button div {
+    padding: 15px;
+    background: #157C68;
+    width: 265px;
+    padding-top: 20px;
+}
+
+.nijmegen-login-button b {
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+    padding-left: 45px;
+}
 
