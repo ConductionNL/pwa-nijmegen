@@ -1,0 +1,29 @@
+/* These make sure the footer stays at the bottom */
+.utrecht-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.utrecht-page__content {
+    height: 100vh;
+}
+
+.utrecht-page-footer {
+    margin-top: auto;
+}
+
+.header-align {
+    padding: 30px;
+    text-align: center;
+}
+
+.redirect-loader-size {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+.fit-content {
+    width: fit-content !important;
+}
+
