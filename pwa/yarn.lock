@@ -1051,10 +1051,10 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     "to-fast-properties" "^2.0.0"
 
-"@conductionnl/nl-design-system@^1.0.57":
-  "integrity" "sha512-7jvPl5gJep9f0pgZsyBnClqikGJVrBEyv7CMruvFJUuFf2dkG8DKmwqf0gJxOcywuHhN1zUGNOfrlw/Jp7wOAA=="
-  "resolved" "https://registry.npmjs.org/@conductionnl/nl-design-system/-/nl-design-system-1.0.57.tgz"
-  "version" "1.0.57"
+"@conductionnl/nl-design-system@^1.0.58":
+  "integrity" "sha512-D80jOFer60PxovKGyALEklBmLwYu1A5eemKUJGEJZQCH1vbW9ER5kdLqD2fuoki7Dwemj2KxLns0wW5kYkqBdA=="
+  "resolved" "https://registry.npmjs.org/@conductionnl/nl-design-system/-/nl-design-system-1.0.58.tgz"
+  "version" "1.0.58"
   dependencies:
     "@types/lodash" "^4.14.177"
     "@types/react" "^17.0.37"
@@ -5606,6 +5606,11 @@
   "integrity" "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
+
+"fsevents@~2.3.2":
+  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
+  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  "version" "2.3.2"
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
@@ -11541,10 +11546,10 @@
     "unist-util-stringify-position" "^2.0.0"
     "vfile-message" "^2.0.0"
 
-"watchpack@^2.3.0":
-  "integrity" "sha512-MnN0Q1OsvB/GGHETrFeZPQaOelWh/7O+EiFlj8sM9GPjtQkis7k01aAxrg/18kTfoIVcLL+haEVFlXDaSRwKRw=="
-  "resolved" "https://registry.npmjs.org/watchpack/-/watchpack-2.3.0.tgz"
-  "version" "2.3.0"
+"watchpack@^2.3.1":
+  "integrity" "sha512-x0t0JuydIo8qCNctdDrn1OzH/qDzk2+rdCOC3YzumZ42fiMqmQ7T3xQurykYMhYfHaPHTp4ZxAx2NfUo1K6QaA=="
+  "resolved" "https://registry.npmjs.org/watchpack/-/watchpack-2.3.1.tgz"
+  "version" "2.3.1"
   dependencies:
     "glob-to-regexp" "^0.4.1"
     "graceful-fs" "^4.1.2"
@@ -11605,9 +11610,9 @@
     "debug" "^3.0.0"
 
 "webpack@^4.0.0 || ^5.0.0", "webpack@^4.27.0 || ^5.0.0", "webpack@^4.4.0 || ^5.0.0", "webpack@^5.0.0", "webpack@^5.1.0", "webpack@^5.61.0", "webpack@>=2", "webpack@>=4.43.0 <6.0.0":
-  "integrity" "sha512-LWhqfKjCLoYJLKJY8wk2C3h77i8VyHowG3qYNZiIqD6D0ZS40439S/KVuc/PY48jp2yQmy0mhMknq8cys4jFMw=="
-  "resolved" "https://registry.npmjs.org/webpack/-/webpack-5.64.4.tgz"
-  "version" "5.64.4"
+  "integrity" "sha512-Q5or2o6EKs7+oKmJo7LaqZaMOlDWQse9Tm5l1WAfU/ujLGN5Pb0SqGeVkN/4bpPmEqEP5RnVhiqsOtWtUVwGRw=="
+  "resolved" "https://registry.npmjs.org/webpack/-/webpack-5.65.0.tgz"
+  "version" "5.65.0"
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.50"
@@ -11631,7 +11636,7 @@
     "schema-utils" "^3.1.0"
     "tapable" "^2.1.1"
     "terser-webpack-plugin" "^5.1.3"
-    "watchpack" "^2.3.0"
+    "watchpack" "^2.3.1"
     "webpack-sources" "^3.2.2"
 
 "whatwg-fetch@^3.0.0":
