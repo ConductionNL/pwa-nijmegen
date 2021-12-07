@@ -6,6 +6,7 @@ import { Link } from "gatsby";
 import {ActionMenu, BreakpointActionMenu} from "@conductionnl/nl-design-system/lib/ActionMenu/src/actionMenu";
 import {Card} from "@conductionnl/nl-design-system/lib/Card/src/card";
 import { Table } from "@conductionnl/nl-design-system/lib/Table/src/table";
+import {MainActionMenu} from "../../components/common/actionMenu";
 
 const IndexPage = () => {
   const context = useUrlContext();
@@ -67,10 +68,7 @@ const IndexPage = () => {
 
         <div className="row">
           <div className="col-3">
-             <ActionMenu 
-              items={[{ name: 'Diensten', icon: 'fas fa-shopping-cart', link: '/products' }, { name: 'Mijn aanvragen', icon: 'fas fa-list-alt', link: '/cases' }, { name: 'Mijn gegevens', icon: 'fas fa-id-card-alt', link: '/data' }, { name: 'Mijn kluis', icon: 'fas fa-lock', link: '/vault' }]}
-              breakpoint={BreakpointActionMenu.mobile}
-            />
+            <MainActionMenu />
           </div>
           <div className="col-9">
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">

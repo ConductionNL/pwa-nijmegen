@@ -1,34 +1,11 @@
 import * as React from "react";
+import {ActionMenu, BreakpointActionMenu} from "@conductionnl/nl-design-system/lib/ActionMenu/src/actionMenu";
 
-export default function ActionMenu() {
+export function MainActionMenu() {
   return (
-    <nav className="utrecht-sidenav">
-      <ul className="utrecht-sidenav__list">
-        <li className="utrecht-sidenav__item">
-          <a className="utrecht-sidenav__link" href="/products">
-            Diensten
-          </a>
-          <span></span>
-        </li>
-        <li className="utrecht-sidenav__item">
-          <a className="utrecht-sidenav__link" href="/cases">
-            Mijn aanvragen
-          </a>
-          <span></span>
-        </li>
-        <li className="utrecht-sidenav__item">
-          <a className="utrecht-sidenav__link" href="/data">
-            Mijn gegevens
-          </a>
-          <span></span>
-        </li>
-        <li className="utrecht-sidenav__item">
-          <a className="utrecht-sidenav__link" href="/vault">
-            Mijn kluis
-          </a>
-          <span></span>
-        </li>
-      </ul>
-    </nav>
+    <ActionMenu
+      items={[{ name: 'Diensten', icon: 'fas fa-shopping-cart', link: '/products' }, { name: 'Mijn aanvragen', icon: 'fas fa-list-alt', link: '/cases' }, { name: 'Mijn gegevens', icon: 'fas fa-id-card-alt', link: '/data' }, { name: 'Mijn kluis', icon: 'fas fa-lock', link: '/vault' }]}
+      breakpoint={BreakpointActionMenu.mobile}
+    />
   );
 }
