@@ -9,6 +9,7 @@ import {List} from "@conductionnl/nl-design-system/lib/List/src/list";
 import {useUrlContext} from "../../context/urlContext";
 import {useUserContext} from "../../context/userContext";
 import {Accordion} from "@conductionnl/nl-design-system/lib/Accordion/src/accordion";
+import {MainActionMenu} from "../../components/common/actionMenu";
 
 const Index = () => {
   const context = useUrlContext();
@@ -63,18 +64,7 @@ const Index = () => {
         <div className="container">
           <div className="row">
             <div className="col-3">
-              <ActionMenu
-                items={[{name: 'Diensten', icon: 'fas fa-shopping-cart', link: '/index'}, {
-                  name: 'Mijn aanvragen',
-                  icon: 'fas fa-list-alt',
-                  link: ''
-                }, {name: 'Mijn gegevens', icon: 'fas fa-id-card-alt', link: ''}, {
-                  name: 'Mijn kluis',
-                  icon: 'fas fa-lock',
-                  link: ''
-                }]}
-                breakpoint={BreakpointActionMenu.mobile}
-              />
+              <MainActionMenu />
               <BottomNavigation
                 items={[{name: 'Diensten', icon: 'fas fa-shopping-cart', link: '/index'}, {
                   name: 'Mijn aanvragen',
