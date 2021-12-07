@@ -55,3 +55,17 @@
     list-style-type: none;
 }
 
+.utrecht-sidenav__item {
+    text-decoration-line: none;
+    font-size: 15px;
+    margin: 10px;
+    color: black;
+}
+
+.utrecht-sidenav__item-hover {
+    text-decoration: none;
+}
+
+.sidenav-span {
+    margin-right: 20px;
+}
