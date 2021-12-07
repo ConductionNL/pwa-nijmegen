@@ -27,3 +27,7 @@
     width: fit-content !important;
 }
 
+.list {
+    list-style-type: none;
+}
+

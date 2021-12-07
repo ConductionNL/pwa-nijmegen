@@ -5,7 +5,7 @@ import {
 import * as React from "react";
 import Layout from "../../components/common/layout";
 import {ActionMenu, BreakpointActionMenu} from "@conductionnl/nl-design-system/lib/ActionMenu/src/actionMenu";
-import {List} from "../../components/common/actionMenu";
+import {List} from "@conductionnl/nl-design-system/lib/List/src/list";
 import {useUrlContext} from "../../context/urlContext";
 import {useUserContext} from "../../context/userContext";
 import {Accordion} from "@conductionnl/nl-design-system/lib/Accordion/src/accordion";
