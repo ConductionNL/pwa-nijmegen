@@ -1,5 +1,4 @@
-import Card from "@conductionnl/nl-design-system/lib/Card/src/card";
-import { Link } from "gatsby";
+import { Card } from "@conductionnl/nl-design-system";
 import * as React from "react";
 import { isLoggedIn } from "../../services/auth";
 import { navigate } from "gatsby-link";
@@ -14,11 +13,11 @@ export default function Certificates() {
     } else {
       if (isLoggedIn() && typeof window !== "undefined") {
         const queryString = window.location.search;
-
         if (queryString.length === 0) {
           setPayment(
             JSON.parse(window.sessionStorage.getItem("payment") as string)
           );
+          console.log(payment)
         } else {
           handlePayment();
         }
@@ -28,6 +27,7 @@ export default function Certificates() {
 
   const [payment, setPayment] = React.useState(null);
   const [loading, setLoading] = React.useState(null);
+  console.log(payment)
 
   const handlePayment = () => {
     setLoading(true);
@@ -41,11 +41,11 @@ export default function Certificates() {
       const orderId = urlParams.get("orderID");
 
       if (payment.orderId !== orderId) {
-        navigate("/");
+        navigate("/vault");
       }
 
       fetch(
-        `${context.apiUrl}/gateways/service/payments/${payment.id}/certificate${queryString}`,
+        `${context.apiUrl}/gateways/waardepapieren-service/payments/${payment.id}/certificate${queryString}`,
         {
           credentials: "include",
           headers: {
@@ -55,13 +55,12 @@ export default function Certificates() {
       )
         .then((response) => response.json())
         .then((data) => {
-          navigate("/");
+          navigate("/vault");
         });
     }
   };
 
   const handleBack = () => {
-    console.log(payment);
     if (typeof window !== "undefined") {
       window.sessionStorage.removeItem("payment");
       navigate("/");
@@ -71,6 +70,45 @@ export default function Certificates() {
   return (
     <>
       <div>
+        {loading !== null && (
+          <div className="text-center">
+            <div className="spinner-border" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        )}
+        {payment !== null && (
+          <form method="POST" action={payment.redirectUrl}>
+            <div className="row">
+              <div className="col-12">
+                <h4 className="utrecht-heading-4">
+                  <strong>Waardepapier:</strong>{" "}
+                  {payment.type.replaceAll("_", " ")}
+                </h4>
+              </div>
+              <div className="col-12">
+                <h4 className="utrecht-heading-4">
+                  <strong>Kost:</strong> € {payment.price / 100},-
+                </h4>
+              </div>
+              <div className="col-12">
+                <button className={"utrecht-button"}>Betalen</button>
+              </div>
+            </div>
+            {Object.entries(payment.configuration).map(
+              ([key, value]) => {
+                return (
+                  <input
+                    key={key}
+                    type="hidden"
+                    name={key}
+                    value={value}
+                  />
+                );
+              }
+            )}
+          </form>
+        )}
         <Card
           title={"Betalen"}
           cardHeader={function () {
@@ -88,29 +126,27 @@ export default function Certificates() {
             return (
               <>
                 {loading !== null && (
-                  <>
                     <div className="text-center">
                       <div className="spinner-border" role="status">
                         <span className="sr-only">Loading...</span>
                       </div>
                     </div>
-                  </>
                 )}
-                {payment !== null && loading === null && (
+                {payment !== null && (
                   <form method="POST" action={payment.redirectUrl}>
                     <div className="row">
-                      <div className="col-12 text-start">
-                        <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
+                      <div className="col-12">
+                        <h4 className="utrecht-heading-4">
                           <strong>Waardepapier:</strong>{" "}
                           {payment.type.replaceAll("_", " ")}
                         </h4>
                       </div>
-                      <div className="col-12 text-start">
-                        <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
+                      <div className="col-12">
+                        <h4 className="utrecht-heading-4">
                           <strong>Kost:</strong> € {payment.price / 100},-
                         </h4>
                       </div>
-                      <div className="col-12 text-start mt-4">
+                      <div className="col-12">
                         <button className={"utrecht-button"}>Betalen</button>
                       </div>
                     </div>

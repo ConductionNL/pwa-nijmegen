@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 pwa:
   image:
-    image: "ghcr.io/conductionnl/proto-pwa-gatsby   "
+    image: "ghcr.io/conductionnl/pwa-nijmegen"
     pullPolicy: Always
     # Overrides the image tag whose default is the chart appVersion.
     tag: "dev"
@@ -13,6 +13,7 @@ pwa:
   frontendUrl: ""
   organization: ""
   redirectUrl: "vault"
+  waardepapierenPaymentRequired: false
     
 gateway: 
   enabled: true

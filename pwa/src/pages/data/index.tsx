@@ -13,8 +13,6 @@ const Index = () => {
   const [context, setContext] = React.useState(null);
   const [person, setPerson] = React.useState(null);
 
-  console.log(getUser())
-
     React.useEffect(() => {
       if (typeof window !== "undefined" && context === null) {
         setContext({
@@ -29,15 +27,11 @@ const Index = () => {
           })
             .then(response => response.json())
             .then((data) => {
-              console.log('data')
-              console.log(data);
               if (data.error !== undefined && data.error.status !== undefined && data.error.status == 404) {
                 getPersonWithoutExpand();
               } else {
                 setPerson(data);
-                // const children = person['_embedded'].kinderen;
               }
-              console.log(data)
             });
         }
       }
