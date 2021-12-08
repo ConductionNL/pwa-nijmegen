@@ -19,6 +19,8 @@ module.exports = {
           "img-src": "'self' https://demodam.nl/ data:",
           "font-src":
             "'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/",
+          "connect-src": "'self' http://localhost",
+          "form-action": "'self' https://secure.ogone.com/ncol/test/",
         },
       },
     },
