@@ -140,7 +140,7 @@ export default function Waardepapieren() {
         });
     }
   };
-  
+
   return (
     <>
       <div>

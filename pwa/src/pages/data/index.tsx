@@ -73,18 +73,20 @@ const Index = () => {
               <br/>
               <>
                 {
-                  person !== null && person.naam !== undefined && person.naam.voornamen && (
-                    <List items={[{name: "Voornaam", value: person.naam.voornamen},
-                      {name: "Achternaam", value: person.naam.geslachtsnaam},
-                      {name: "Geslacht", value: person.geslachtsaanduiding}
+                  person !== null && person.naam !== undefined && (
+                    <List items={[{name: "Voornaam", value: person.naam.voornamen ?? null},
+                      {name: "Achternaam", value: person.naam.voorletters !== null ? `${person.naam.voorletters} ${person.naam.geslachtsnaam}` : person.naam.geslachtsnaam == null ? null : person.naam.geslachtsnaam},
+                      {name: "Geslacht", value: person.geslachtsaanduiding ?? null}
                     ]}/>
                   )
                 }
                 {
-                  person !== null && (
-                    <List items={[{name: "Straat", value: person.verblijfplaats.adresregel1},
-                      {name: "Plaats", value: person.verblijfplaats.woonplaats},
-                      {name: "Vanaf", value: person.verblijfplaats.datumAanvangAdreshouding.datum},
+                  person !== null && person.verblijfplaats !== undefined && (
+                    <List items={[{name: "Straat", value: person.verblijfplaats.straat ?? null},
+                      {name: "Huisnummer", value: person.verblijfplaats.huisnummer ?? null},
+                      {name: "Postcode", value: person.verblijfplaats.postcode ?? null},
+                      {name: "Plaats", value: person.verblijfplaats.woonplaats ?? null},
+                      {name: "Vanaf", value: person.verblijfplaats.datumAanvangAdreshouding.datum ?? null},
                       {name: "Aantal bewoners", value: ""}
                     ]}/>
                   )
@@ -96,7 +98,7 @@ const Index = () => {
                       return (
                         person['_embedded'].kinderen.map((row) => (
                           <List items={[{name: "Voornamen", value: row.naam.voornamen},
-                            {name: "Achternaam", value: row.naam.geslachtsnaam},
+                            {name: "Achternaam", value: row.naam.voorletters !== null ? `${row.naam.voorletters} ${row.naam.geslachtsnaam}` : row.naam.geslachtsnaam == null ? null : row.naam.geslachtsnaam},
                             {name: "Geslacht", value: row.geslachtsaanduiding}
                           ]}/>
                         ))
@@ -111,7 +113,7 @@ const Index = () => {
                       return (
                         person['_embedded'].ouders.map((row) => (
                           <List items={[{name: "Voornamen", value: row.naam.voornamen},
-                            {name: "Achternaam", value: row.naam.geslachtsnaam},
+                            {name: "Achternaam", value: row.naam.voorletters !== null ? `${row.naam.voorletters} ${row.naam.geslachtsnaam}` : row.naam.geslachtsnaam == null ? null : row.naam.geslachtsnaam},
                             {name: "Geslacht", value: row.geslachtsaanduiding}
                           ]}/>
                         ))
