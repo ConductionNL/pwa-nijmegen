@@ -16,7 +16,7 @@
     "lint": "eslint --fix src/**/*.{js,jsx,ts,tsx}"
   },
   "dependencies": {
-    "@conductionnl/nl-design-system": "^1.0.60",
+    "@conductionnl/nl-design-system": "^1.0.67",
     "@nl-design-system-unstable/theme-switcher": "1.0.0-alpha.6",
     "@types/react": "^17.0.37",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
