@@ -10,6 +10,9 @@ import {navigate} from "gatsby-link";
 
 export default function Waardepapieren() {
   const [context, setContext] = React.useState(null);
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(true);
 
   React.useEffect(() => {
     if (typeof window !== "undefined" && context === null) {
@@ -109,6 +112,11 @@ export default function Waardepapieren() {
   return (
     <>
       <div style={{textAlign: "right"}}>
+        <div style={{textAlign: "right"}}>
+          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#waardepapieren">
+            Claims
+          </button>
+        </div>
         <Modal title={"Waardepapieren"}
                id={"waardepapieren"}
                body={function (){return(
@@ -137,7 +145,10 @@ export default function Waardepapieren() {
           fileFunction={documentDownload}
         />
       ) : (
-        <p className="utrecht-paragraph">Geen resultaten gevonden</p>
+        <WaardepapierenTable
+          rows={[]}
+          fileFunction={documentDownload}
+        />
       )
       }
     </>
