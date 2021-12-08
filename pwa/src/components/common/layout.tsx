@@ -4,10 +4,19 @@ import Header from "./header";
 import "bootstrap/dist/css/bootstrap.css";
 import MainMenu from "./menu";
 import { Helmet } from "react-helmet";
-import { useUrlContext } from "../../context/urlContext";
 
 export default function Layout({ children }) {
-  const context = useUrlContext();
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      setContext({
+        defaultTheme: window.GATSBY_DEFAULT_THEME,
+      });
+    }
+  }, []);
+  const [context, setContext] = React.useState({
+    defaultTheme: "",
+  });
 
   return (
     <>

@@ -4,44 +4,47 @@ import {
 } from "@conductionnl/nl-design-system/lib/BottomNavigation/src/bottomNavigation";
 import * as React from "react";
 import Layout from "../../components/common/layout";
-import {ActionMenu, BreakpointActionMenu} from "@conductionnl/nl-design-system/lib/ActionMenu/src/actionMenu";
 import {List} from "@conductionnl/nl-design-system/lib/List/src/list";
-import {useUrlContext} from "../../context/urlContext";
-import {useUserContext} from "../../context/userContext";
 import {Accordion} from "@conductionnl/nl-design-system/lib/Accordion/src/accordion";
 import {MainActionMenu} from "../../components/common/actionMenu";
+import {getUser, isLoggedIn} from "../../services/auth";
 
 const Index = () => {
-  const context = useUrlContext();
-  const user = useUserContext().user;
-
+  const [context, setContext] = React.useState(null);
   const [person, setPerson] = React.useState(null);
 
-  console.log('user')
-  console.log(user);
-  console.log(person)
+  console.log(getUser())
 
-  const getPerson = () => {
-    fetch(`${context.apiUrl}/gateways/brp/ingeschrevenpersonen/${user.username}?expand=ouders,kinderen`, {
-      credentials: 'include',
-      headers: {'Content-Type': 'application/json'},
-    })
-      .then(response => response.json())
-      .then((data) => {
-        console.log('data')
-        console.log(data);
-        if (data.error !== undefined && data.error.status !== undefined && data.error.status == 404) {
-          getPersonWithoutExpand();
-        } else {
-          setPerson(data);
-          // const children = person['_embedded'].kinderen;
+    React.useEffect(() => {
+      if (typeof window !== "undefined" && context === null) {
+        setContext({
+          apiUrl: window.GATSBY_API_URL,
+          frontendUrl: window.GATSBY_FRONTEND_URL,
+        });
+      } else {
+        if (isLoggedIn()) {
+          fetch(`${context.apiUrl}/gateways/brp/ingeschrevenpersonen/${getUser().username}?expand=ouders,kinderen`, {
+            credentials: 'include',
+            headers: {'Content-Type': 'application/json'},
+          })
+            .then(response => response.json())
+            .then((data) => {
+              console.log('data')
+              console.log(data);
+              if (data.error !== undefined && data.error.status !== undefined && data.error.status == 404) {
+                getPersonWithoutExpand();
+              } else {
+                setPerson(data);
+                // const children = person['_embedded'].kinderen;
+              }
+              console.log(data)
+            });
         }
-        console.log(data)
-      });
-  }
+      }
+    }, [context]);
 
   const getPersonWithoutExpand = () => {
-    fetch(`${context.apiUrl}/gateways/brp/ingeschrevenpersonen/${user.username}`, {
+    fetch(`${context.apiUrl}/gateways/brp/ingeschrevenpersonen/${getUser().username}`, {
       credentials: 'include',
       headers: {'Content-Type': 'application/json'},
     })
@@ -50,13 +53,6 @@ const Index = () => {
         setPerson(data);
       });
   }
-
-
-  React.useEffect(() => {
-    if (user !== null) {
-      getPerson();
-    }
-  }, []);
 
   return (
     <Layout>

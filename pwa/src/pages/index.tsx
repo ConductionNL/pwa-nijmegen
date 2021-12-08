@@ -1,17 +1,24 @@
 import * as React from "react";
 import Layout from "../components/common/layout";
-import { useUrlContext } from "../context/urlContext";
-import { useUserContext } from "../context/userContext";
 import { Link } from "gatsby";
 import DigiDImage from "../images/digid_button.svg";
+import {getUser, isLoggedIn} from "../services/auth";
 
 const IndexPage = () => {
-  const context = useUrlContext();
-  const user = useUserContext().user;
 
+  console.log(getUser())
   React.useEffect(() => {
-    console.log(user);
+    if (typeof window !== "undefined") {
+      setContext({
+        baseUrl: window.GATSBY_BASE_URL,
+        frontendUrl: window.GATSBY_FRONTEND_URL,
+      });
+    }
   }, []);
+  const [context, setContext] = React.useState({
+    baseUrl: "",
+    frontendUrl: "",
+  });
 
   return (
     <Layout>
@@ -19,17 +26,25 @@ const IndexPage = () => {
         <title>Nijmegen</title>
         <div>
           <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">
-            {user == null ?
+            {!isLoggedIn() ?
               "Mijn Nijmegen" :
-              "Welkom " + user.name
+              "Welkom " + getUser().name
             }
           </h1>
           <h6 className="utrecht-heading-6 utrecht-heading-6--distanced">
             Bekijk uw gegevens, meldingen, aanvragen of uitkeringsgegevens op uw persoonlijke gemeentepagina.
           </h6>
 
-          {user == null ? (
-          <a className="nijmegen-login-button" href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/redirect"}>
+          {!isLoggedIn() ? (
+            <a
+              className={"nijmegen-login-button"}
+              href={
+                context.baseUrl +
+                "/digid/login?returnUrl=" +
+                context.frontendUrl +
+                "/redirect"
+              }
+            >
             <div>
               <img src={DigiDImage} width='55px' height='55px' />
               <b>
