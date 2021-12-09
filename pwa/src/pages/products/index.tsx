@@ -1,35 +1,37 @@
 import * as React from "react";
 import Layout from "../../components/common/layout";
-import { useUrlContext } from "../../context/urlContext";
-import { useUserContext } from "../../context/userContext";
 import { Link } from "gatsby";
-import {ActionMenu, BreakpointActionMenu} from "@conductionnl/nl-design-system/lib/ActionMenu/src/actionMenu";
 import {Card} from "@conductionnl/nl-design-system/lib/Card/src/card";
-import { Table } from "@conductionnl/nl-design-system/lib/Table/src/table";
 import {MainActionMenu} from "../../components/common/actionMenu";
+import {isLoggedIn} from "../../services/auth";
 
 const IndexPage = () => {
-  const context = useUrlContext();
-  const user = useUserContext().user;
-
+  const [context, setContext] = React.useState(null);
   const [products, setProducts] = React.useState(null);
 
-  const getProducts = () => {
-    fetch(context.apiUrl + '/gateways/products', {
-      method: 'GET',
-      credentials: 'include',
-      headers: { 'Content-Type': 'application/json' }
-    })
-      .then(response => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data['hydra:member'] !== undefined && data['hydra:member'] !== undefined) {
-          setProducts(data);
-        } else {
-          setProducts(null);
-        }
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && context === null) {
+      setContext({
+        apiUrl: window.GATSBY_API_URL,
       });
-  }
+    } else {
+      if (isLoggedIn()) {
+        fetch(`${context.apiUrl}/gateways/products`, {
+          credentials: 'include',
+          headers: {'Content-Type': 'application/json'},
+        })
+          .then(response => response.json())
+          .then((data) => {
+            console.log(data);
+            if (data['hydra:member'] !== undefined && data['hydra:member'] !== undefined) {
+              setProducts(data);
+            } else {
+              setProducts(hardcodedProducts);
+            }
+          });
+      }
+    }
+  }, [context]);
 
   const hardcodedProducts = [
     {
@@ -54,13 +56,6 @@ const IndexPage = () => {
       <Link to={"/products" + product.id} className="utrecht-link text-right float-right mt-2">Bekijken</Link>
     </>)
   }
-
-  React.useEffect(() => {
-    console.log(user);
-    // getProducts();
-    setProducts(hardcodedProducts);
-  }, []);
-
   return (
     <Layout>
       <main>
@@ -77,9 +72,9 @@ const IndexPage = () => {
             {
               products !== null && products.length != 0 &&
                 <div className="row">
-                {products.map((product: { name: string; }) => (
-                  <div className="col-6">
-                    <Card title={product.name} cardBody={createCardBody(product)} />
+                {products.map((product: { name: string; description: string; id: string; }) => (
+                  <div className="col-6" key={product.name}>
+                    <Card title={product.name} cardBody={function () { return(createCardBody(product))}} />
                   </div>
                 ))}
                </div>

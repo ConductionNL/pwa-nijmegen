@@ -1,42 +1,42 @@
 import * as React from "react";
 import Layout from "../../components/common/layout";
-import { useEffect } from "react";
-import { useUrlContext } from "../../context/urlContext";
 import { navigate } from "gatsby-link";
 import { setUser } from "../../services/auth";
 
 const Redirect = () => {
-  const urlContext = useUrlContext();
+  const [context, setContext] = React.useState(null);
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (context === null) {
+        setContext({
+          meUrl: window.GATSBY_ME_URL,
+          loginRedirect: window.GATSBY_REDIRECT_URL,
+        });
+      } else {
+        handleLogin();
+      }
+    }
+  }, [context]);
 
   const handleLogin = () => {
-    fetch(urlContext.meUrl, {
+    fetch(context.meUrl, {
       credentials: "include",
       headers: { "Content-Type": "application/json" },
     })
       .then(function (response) {
-        if (response.ok) {
-          return response.json();
-        }
-
-        throw new Error("Something went wrong.");
+        return response.json();
       })
       .then(function (data) {
         setUser(data);
 
-        if (urlContext.loginRedirect !== "null") {
-          navigate("/" + urlContext.loginRedirect);
+        if (context.loginRedirect !== "null") {
+          navigate("/" + context.loginRedirect);
         } else {
           navigate("/");
         }
-      })
-      .catch(function () {
-        navigate("/");
       });
   };
-
-  useEffect(() => {
-    handleLogin();
-  }, []);
 
   return (
     <Layout>

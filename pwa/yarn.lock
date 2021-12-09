@@ -1051,10 +1051,10 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     "to-fast-properties" "^2.0.0"
 
-"@conductionnl/nl-design-system@^1.0.58":
-  "integrity" "sha512-D80jOFer60PxovKGyALEklBmLwYu1A5eemKUJGEJZQCH1vbW9ER5kdLqD2fuoki7Dwemj2KxLns0wW5kYkqBdA=="
-  "resolved" "https://registry.npmjs.org/@conductionnl/nl-design-system/-/nl-design-system-1.0.58.tgz"
-  "version" "1.0.58"
+"@conductionnl/nl-design-system@^1.0.67":
+  "integrity" "sha512-MvMQCrWf0F1yOZpzsglP4qjyVIZQUbFjl/g8A5hNs/cgcBs9shJ14Gxycbg/DmmVW679MP1BmsJ+vEZbyuIJfg=="
+  "resolved" "https://registry.npmjs.org/@conductionnl/nl-design-system/-/nl-design-system-1.0.67.tgz"
+  "version" "1.0.67"
   dependencies:
     "@types/lodash" "^4.14.177"
     "@types/react" "^17.0.37"
