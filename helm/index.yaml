@@ -20,7 +20,7 @@ entries:
     urls:
     - charts/commonground-gateway-0.1.2.tgz
     version: 0.1.2
-  nl-design-skeleton-gatsby:
+  pwa-nijmegen:
   - apiVersion: v2
     appVersion: 0.1.0
     created: "2021-11-12T07:05:18.1350792+01:00"
@@ -32,9 +32,9 @@ entries:
       version: 0.1.2
     description: Skeleton application for NL Design running on Gatsby
     digest: 3e948e40e389b8f79c8ec71025624d6bd82c59996afef2ed23b5c6172b960841
-    name: nl-design-skeleton-gatsby
+    name: pwa-nijmegen
     type: application
     urls:
-    - nl-design-skeleton-gatsby-0.1.0.tgz
+    - pwa-nijmegen-0.1.0.tgz
     version: 0.1.0
 generated: "2021-11-12T07:05:17.9166608+01:00"
