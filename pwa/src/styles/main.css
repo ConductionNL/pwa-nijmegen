@@ -53,6 +53,7 @@
 
 .list {
     list-style-type: none;
+
 }
 
 .utrecht-sidenav__item {
@@ -97,4 +98,11 @@
 
 .list-icon {
     float: right;
+}
+
+.navbar {
+    margin-top: auto;
+    display: block;
+    box-sizing: border-box;
+    text-decoration-line: none;
 }

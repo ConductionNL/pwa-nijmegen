@@ -16,18 +16,6 @@ const Index = () => {
           <div className="row">
             <div className="col-2">
               <MainActionMenu />
-              <BottomNavigation
-                items={[{name: 'Diensten', icon: 'fas fa-shopping-cart', link: '/index'}, {
-                  name: 'Mijn aanvragen',
-                  icon: 'fas fa-list-alt',
-                  link: ''
-                }, {name: 'Mijn gegevens', icon: 'fas fa-id-card-alt', link: ''}, {
-                  name: 'Mijn kluis',
-                  icon: 'fas fa-lock',
-                  link: ''
-                }]}
-                breakpoint={BreakpointBottomNavigation.mobile}
-              />
             </div>
             <div className="col-10">
               <Breadcrumbs items={[{render: function () {return "Home";}, name: "home", link: "/index"}, {render: function () {return "Mijn kluis";}, name: "vault", link: "/vault"}]} />
