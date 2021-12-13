@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 export default function Footer() {
   return (
     <footer className="utrecht-page-footer">
-      {/* <div className="container">
+      <div className="container">
         <div className="row">
           <div className="col-xs-12  col-sm-4">
             <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
 
         </div>
-      </div> */}
+      </div>
     </footer >
   );
 }
