@@ -8,7 +8,7 @@ import {
 export default function Footer() {
   return (
     <>
-      <div className="container">
+      {/*<div className="container">*/}
       <footer className="utrecht-page-footer">
         <div className="container">
           <div className="row">
@@ -68,25 +68,22 @@ export default function Footer() {
           </div>
         </div>
       </footer>
+      <footer className="utrecht-page-footer mobile">
         <div className="container">
-          <div className="row">
-            <div className="col-xs-12  col-sm-4">
-                <BottomNavigation
-                  items={[{name: 'Diensten', icon: 'fas fa-shopping-cart', link: '/index'}, {
-                    name: 'Mijn aanvragen',
-                    icon: 'fas fa-list-alt',
-                    link: ''
-                  }, {name: 'Mijn gegevens', icon: 'fas fa-id-card-alt', link: ''}, {
-                    name: 'Mijn kluis',
-                    icon: 'fas fa-lock',
-                    link: ''
-                  }]}
-                  breakpoint={BreakpointBottomNavigation.mobile}
-                />
-            </div>
-          </div>
+          <BottomNavigation
+            items={[{name: 'Diensten', icon: 'fas fa-shopping-cart', link: '/products'}, {
+              name: 'Mijn aanvragen',
+              icon: 'fas fa-list-alt',
+              link: '/cases'
+            }, {name: 'Mijn gegevens', icon: 'fas fa-id-card-alt', link: '/data'}, {
+              name: 'Mijn kluis',
+              icon: 'fas fa-lock',
+              link: '/vault'
+            }]}
+            breakpoint={BreakpointBottomNavigation.mobile}
+          />
         </div>
-      </div>
+      </footer>
     </>
   );
 }
