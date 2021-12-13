@@ -28,8 +28,6 @@ export default function Layout({ children }) {
         href={favicon}
         sizes="16x16"
       />
-      <meta name="icon" content="favicon" />
-      <link id="favicon" rel="icon" type="image/x-icon" href="../../../src/images/favicon.ico" sizes="16x16" data-react-helmet="true" />
       <link
           rel="stylesheet"
           href={`https://unpkg.com/@conductionnl/${context.defaultTheme}-design-tokens/dist/index.css`}
