@@ -4,6 +4,7 @@ import Header from "./header";
 import "bootstrap/dist/css/bootstrap.css";
 import MainMenu from "./menu";
 import { Helmet } from "react-helmet";
+import favicon from '../../images/favicon.ico'
 
 export default function Layout({ children }) {
 
@@ -20,8 +21,16 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <Helmet>
-        <link
+    <Helmet>
+      <link
+        rel="icon"
+        type="image/x-icon"
+        href={favicon}
+        sizes="16x16"
+      />
+      <meta name="icon" content="favicon" />
+      <link id="favicon" rel="icon" type="image/x-icon" href="../../../src/images/favicon.ico" sizes="16x16" data-react-helmet="true" />
+      <link
           rel="stylesheet"
           href={`https://unpkg.com/@conductionnl/${context.defaultTheme}-design-tokens/dist/index.css`}
         />
