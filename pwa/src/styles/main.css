@@ -107,3 +107,14 @@
     text-decoration-line: none;
     background-color: #a80a2d;
 }
+
+.utrecht-breadcrumb__link {
+    text-decoration-line: none;
+    color: #a80a2d;
+    margin-top: -8px;
+}
+
+.utrecht-breadcrumb__link:hover {
+    text-decoration-line: underline;
+    color: #a80a2d;
+}

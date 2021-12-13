@@ -56,7 +56,15 @@ const Index = () => {
               <MainActionMenu />
             </div>
             <div className="col-md-6 col-sm-12">
-              <Breadcrumbs items={[{render: function () {return "Home";}, name: "home", link: "/index"}, {render: function () {return "Mijn gegevens";}, name: "data", link: "/data"}]} />
+              <Breadcrumbs items={[{
+                render: function () {
+                  return "Home ";
+                }, name: "home", link: "/"
+              }, {
+                render: function () {
+                  return (<><i className="fas fa-chevron-right"/> Mijn gegevens</>);
+                }, name: "data"
+              }]}/>
               <h4 className="utrecht-heading-1">Mijn gegevens</h4>
               <br/>
               <>

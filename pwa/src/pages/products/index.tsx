@@ -67,7 +67,15 @@ const IndexPage = () => {
             <MainActionMenu />
           </div>
           <div className="col-10">
-            <Breadcrumbs items={[{render: function () {return "Home";}, name: "home", link: "/index"}, {render: function () {return "Diensten";}, name: "products", link: "/products"}]} />
+            <Breadcrumbs items={[{
+              render: function () {
+                return "Home ";
+              }, name: "home", link: "/"
+            }, {
+              render: function () {
+                return (<><i className="fas fa-chevron-right"/> Diensten</>);
+              }, name: "products"
+            }]}/>
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">
               Diensten
             </h1>
