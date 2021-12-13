@@ -91,6 +91,26 @@
 }
 /* End header overwrites */
 
+/* Alert overwrites */
+.utrecht-alert {
+    border-radius: 0 !important;
+    border: 1px solid #a80a2d !important;
+    background-color: #a80a2d !important;
+
+}
+
+.utrecht-alert * {
+    color: white !important;
+}
+
+.utrecht-alert-danger {
+    color: #a80a2d !important;
+}
+/* End alert overwrites */
+
+/* Card overwrites */
+/* End card overwrites */
+
 .sidenav-span {
     margin-right: 10px;
 }

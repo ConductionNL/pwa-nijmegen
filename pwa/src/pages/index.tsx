@@ -27,25 +27,10 @@ const IndexPage = () => {
     )
   }
 
-  const Alert = () => {
-    return (
-      <Alert body={AlertBody} alertClass="danger" />
-    )
-  }
-
-  const RemoveAlert = () => {
-    let alert = document.findElementById
-  }
-
   return (
     <Layout>
       <main>
-        {
-         Alert
-        }
-        {
-         console.log(Alert)
-        }
+        <Alert id="test" alertClass="danger" body={AlertBody} removeAfterMS={5000} />
         <title>Nijmegen</title>
         <div>
           <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">
