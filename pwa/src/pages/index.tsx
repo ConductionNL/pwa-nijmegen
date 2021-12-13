@@ -2,7 +2,8 @@ import * as React from "react";
 import Layout from "../components/common/layout";
 import { Link } from "gatsby";
 import DigiDImage from "../images/digid_button.svg";
-import {getUser, isLoggedIn} from "../services/auth";
+import { getUser, isLoggedIn } from "../services/auth";
+import { Alert } from "@conductionnl/nl-design-system/lib/Alert/src/alert";
 
 const IndexPage = () => {
 
@@ -20,9 +21,31 @@ const IndexPage = () => {
     frontendUrl: "",
   });
 
+  const AlertBody = () => {
+    return (
+      <p className="utrecht-paragraph">Alert message here!</p>
+    )
+  }
+
+  const Alert = () => {
+    return (
+      <Alert body={AlertBody} alertClass="danger" />
+    )
+  }
+
+  const RemoveAlert = () => {
+    let alert = document.findElementById
+  }
+
   return (
     <Layout>
       <main>
+        {
+         Alert
+        }
+        {
+         console.log(Alert)
+        }
         <title>Nijmegen</title>
         <div>
           <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">
@@ -45,23 +68,23 @@ const IndexPage = () => {
                 "/redirect"
               }
             >
-            <div>
-              <img src={DigiDImage} width='55px' height='55px' />
-              <b>
-                INLOGGEN
-              </b>
-            </div>
-          </a>
+              <div>
+                <img src={DigiDImage} width='55px' height='55px' />
+                <b>
+                  INLOGGEN
+                </b>
+              </div>
+            </a>
           ) : (
-          <Link
-            to="/data"
-            className="nijmegen-login-button">
-            <div>
-              <b>
-                MIJN GEGEVENS
-              </b>
-            </div>
-          </Link>
+            <Link
+              to="/data"
+              className="nijmegen-login-button">
+              <div>
+                <b>
+                  MIJN GEGEVENS
+                </b>
+              </div>
+            </Link>
           )}
 
           <br />
