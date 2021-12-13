@@ -100,27 +100,6 @@
     float: right;
 }
 
-/*Small devices (landscape phones, 1000px and down)*/
-@media (max-width: 1000px) { .small{ display: none; } }
-
-/*Medium devices (tablets, 1192px and down)*/
-@media (max-width: 1192px) { .medium{ display: none; } }
-
-/*Large devices (desktops, 1416px and down)*/
-@media (max-width: 1416px) { .large{ display: none; } }
-
-
-
-/*Small devices (landscape phones, 1000px and up)*/
-@media (min-width: 1000px) { .mobile{ display: none; } }
-
-/*Medium devices (tablets, 1192px and up)*/
-@media (min-width: 1192px) { .tablet{ display: none; } }
-
-/*Large devices (desktops, 1416px and up)*/
-@media (min-width: 1416px) { .desktop{ display: none; } }
-
-
 .navbar {
     margin-top: auto;
     display: block;
