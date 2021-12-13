@@ -4,11 +4,14 @@ import {
 } from "@conductionnl/nl-design-system/lib/BottomNavigation/src/bottomNavigation";
 import * as React from "react";
 import Layout from "../../components/common/layout";
-import {List} from "@conductionnl/nl-design-system/lib/List/src/list";
+// import {List} from "@conductionnl/nl-design-system/lib/List/src/list";
 import {Accordion} from "@conductionnl/nl-design-system/lib/Accordion/src/accordion";
 import {MainActionMenu} from "../../components/common/actionMenu";
 import {getUser, isLoggedIn} from "../../services/auth";
 import {Breadcrumbs} from "@conductionnl/nl-design-system/lib/Breadcrumbs/src/breadcrumbs";
+import { Card } from "@conductionnl/nl-design-system/lib/Card/src/card";
+import "../../styles/main.css"
+import { List } from "../../components/common/list";
 
 const Index = () => {
   const [context, setContext] = React.useState(null);
@@ -69,7 +72,7 @@ const Index = () => {
                 breakpoint={BreakpointBottomNavigation.mobile}
               />
             </div>
-            <div className="col-10">
+            <div className="col-6">
               <Breadcrumbs items={[{render: function () {return "Home";}, name: "home", link: "/index"}, {render: function () {return "Mijn gegevens";}, name: "data", link: "/data"}]} />
               <h4 className="utrecht-heading-1">Mijn gegevens</h4>
               <br/>
@@ -124,6 +127,16 @@ const Index = () => {
                   }]} id={"ouders"}/>
                 }
               </>
+            </div>
+            <div className="col-4">
+              <Card title={"Gegevens wijzigen"} cardBody={function (){return(
+                <List items={[{name: "Verhuizing doorgeven", href: '#'}, {name: "Uittreksel BRP", href: '#'}]}
+                      group={true}
+                      groupFlush={true}
+                      link={true}
+                      icon={function (){return(<i className="fas fa-chevron-right"/>)}}
+                />
+              )}}/>
             </div>
           </div>
         </div>

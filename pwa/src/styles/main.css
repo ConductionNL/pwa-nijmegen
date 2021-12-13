@@ -83,14 +83,18 @@
 
 .utrecht-topnav__item {
     margin-right: 20px;
-    
+
 }
 .utrecht-topnav__item:hover * {
     cursor: pointer;
-    
+
 }
 /* End header overwrites */
 
 .sidenav-span {
     margin-right: 10px;
+}
+
+.list-icon {
+    float: right;
 }
