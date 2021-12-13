@@ -4,6 +4,7 @@ import DigiDImage from "../../images/digid_button.svg";
 import { Table } from "@conductionnl/nl-design-system/lib/Table/src/table";
 import {MainActionMenu} from "../../components/common/actionMenu";
 import {getUser, isLoggedIn} from "../../services/auth";
+import {Breadcrumbs} from "@conductionnl/nl-design-system/lib/Breadcrumbs/src/breadcrumbs";
 
 const IndexPage = () => {
   const [context, setContext] = React.useState(null);
@@ -50,10 +51,11 @@ const IndexPage = () => {
         <title>Mijn aanvragen</title>
 
         <div className="row">
-        <div className="col-3">
+        <div className="col-2">
           <MainActionMenu />
         </div>
-        <div className="col-9">
+        <div className="col-10">
+          <Breadcrumbs items={[{render: function () {return "Home";}, name: "home", link: "/index"}, {render: function () {return "Mijn aanvragen";}, name: "cases", link: "/cases"}]} />
           <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">
             Aanvragen
           </h1>

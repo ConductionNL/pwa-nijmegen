@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ThemeSwitcher } from "../theme-switcher/theme-switcher";
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 
 export default function Footer() {
   return (
@@ -8,9 +8,9 @@ export default function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-xs-12  col-sm-4">
-            <h5 className="utrecht-heading-5 utrecht-heading-5--distanced">
+            <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
               Diensten
-            </h5>
+            </h4>
             <p className="utrecht-paragraph">
               <Link to="/moving" color="inherit">
                 Verhuizen
@@ -29,28 +29,30 @@ export default function Footer() {
           </div>
 
           <div className="col-xs-12  col-sm-4">
-            <h5 className="utrecht-heading-5 utrecht-heading-5--distanced">
-              Contact
-            </h5>
-            <p className="utrecht-paragraph">
-              <i className="fas fa-building" /> Stadswinkel, Mariënburg 30
-            </p>
-            <p className="utrecht-paragraph">
-              <a href="tel:14 024" color="inherit">
-                <i className="fas fa-phone" /> 14 024
-              </a>
-            </p>
-            <p className="utrecht-paragraph">
-              <a href="mailto:gemeente@nijmegen.nl" color="inherit">
-                <i className="fas fa-mail" /> gemeente@nijmegen.nl
-              </a>
-            </p>
+            <address className="utrecht-page-footer__address utrecht-page-footer__address--reset-address">
+              <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
+                Contact
+              </h4>
+              <p className="utrecht-paragraph">
+                <i className="fas fa-building" /> Stadswinkel, Mariënburg 30
+              </p>
+              <p className="utrecht-paragraph">
+                <a href="tel:14 024" color="inherit">
+                  <i className="fas fa-phone" /> 14 024
+                </a>
+              </p>
+              <p className="utrecht-paragraph">
+                <a href="mailto:gemeente@nijmegen.nl" color="inherit">
+                  <i className="fas fa-mail" /> gemeente@nijmegen.nl
+                </a>
+              </p>
+            </address>
           </div>
 
           <div className="col-xs-12  col-sm-4">
-            <h5 className="utrecht-heading-5 utrecht-heading-5--distanced">
+            <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
               Openingstijden
-            </h5>
+            </h4>
             <p className="utrecht-paragraph">
               Maandag - woensdag: 9.00 - 17.00 <br />
               Donderdag: 9.00 - 20.00 <br />
