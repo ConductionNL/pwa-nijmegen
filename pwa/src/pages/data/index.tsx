@@ -8,6 +8,7 @@ import {List} from "@conductionnl/nl-design-system/lib/List/src/list";
 import {Accordion} from "@conductionnl/nl-design-system/lib/Accordion/src/accordion";
 import {MainActionMenu} from "../../components/common/actionMenu";
 import {getUser, isLoggedIn} from "../../services/auth";
+import {Breadcrumbs} from "@conductionnl/nl-design-system/lib/Breadcrumbs/src/breadcrumbs";
 
 const Index = () => {
   const [context, setContext] = React.useState(null);
@@ -53,7 +54,7 @@ const Index = () => {
       <main>
         <div className="container">
           <div className="row">
-            <div className="col-3">
+            <div className="col-2">
               <MainActionMenu />
               <BottomNavigation
                 items={[{name: 'Diensten', icon: 'fas fa-shopping-cart', link: '/index'}, {
@@ -68,7 +69,8 @@ const Index = () => {
                 breakpoint={BreakpointBottomNavigation.mobile}
               />
             </div>
-            <div className="col-9">
+            <div className="col-10">
+              <Breadcrumbs items={[{render: function () {return "Home";}, name: "home", link: "/index"}, {render: function () {return "Mijn gegevens";}, name: "data", link: "/data"}]} />
               <h4 className="utrecht-heading-1">Mijn gegevens</h4>
               <br/>
               <>
@@ -131,3 +133,4 @@ const Index = () => {
 };
 
 export default Index;
+

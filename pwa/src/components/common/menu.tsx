@@ -24,18 +24,19 @@ export default function MainMenu() {
 
   return (
     <div className="utrecht-navhtml">
+      <div className="container">
       <nav className="topnav utrecht-topnav__list">
-        <div className="container">
           <div className="d-inline">
             <ul className="utrecht-topnav__list">
               <li className="utrecht-topnav__item">
                 {isLoggedIn() && (
-                  <span className="utrecht-topnav__link">{getUser().name}</span>
+                  <span className="utrecht-topnav__link"><i className="far fa-user mr-2"></i>{getUser().name}</span>
                 )}
               </li>
               <li className="utrecht-topnav__item">
                 {isLoggedIn() ? (
                   <span className="utrecht-topnav__link" onClick={handleLogout}>
+                    <i className="fas fa-sign-out-alt mr-2"></i>
                     Uitloggen
                   </span>
                 ) : (
@@ -47,15 +48,15 @@ export default function MainMenu() {
                       context.frontendUrl +
                       "/redirect"
                     }
-                  >
+                  > <i className="fas fa-sign-in-alt mr-2"></i>
                     Inloggen
                   </a>
                 )}
               </li>
             </ul>
           </div>
-        </div>
       </nav>
+        </div>
     </div>
   );
 }

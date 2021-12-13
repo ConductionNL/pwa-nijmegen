@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import {Card} from "@conductionnl/nl-design-system/lib/Card/src/card";
 import {MainActionMenu} from "../../components/common/actionMenu";
 import {isLoggedIn} from "../../services/auth";
+import {Breadcrumbs} from "@conductionnl/nl-design-system/lib/Breadcrumbs/src/breadcrumbs";
 
 const IndexPage = () => {
   const [context, setContext] = React.useState(null);
@@ -62,10 +63,11 @@ const IndexPage = () => {
         <title>Diensten</title>
 
         <div className="row">
-          <div className="col-3">
+          <div className="col-2">
             <MainActionMenu />
           </div>
-          <div className="col-9">
+          <div className="col-10">
+            <Breadcrumbs items={[{render: function () {return "Home";}, name: "home", link: "/index"}, {render: function () {return "Diensten";}, name: "products", link: "/products"}]} />
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">
               Diensten
             </h1>

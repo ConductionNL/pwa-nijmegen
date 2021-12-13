@@ -66,6 +66,31 @@
     text-decoration: none;
 }
 
-.sidenav-span {
+
+/* Temporary header overwrites */
+.utrecht-navhtml {
+    border-bottom: 2px solid #a80a2d;
+}
+
+.utrecht-logo {
+    float: left;
+    margin-bottom: -100px;
+}
+
+.utrecht-topnav__list {
+    float: right;
+}
+
+.utrecht-topnav__item {
     margin-right: 20px;
+    
+}
+.utrecht-topnav__item:hover * {
+    cursor: pointer;
+    
+}
+/* End header overwrites */
+
+.sidenav-span {
+    margin-right: 10px;
 }

@@ -114,7 +114,7 @@ const ThemeSwitcher = () => {
             {
               className: "nijmegen-theme",
               title: "Nijmegen",
-              href: "https://unpkg.com/@conductionnl/nijmegen-design-tokens/dist/index.css",
+              href: "https://unpkg.com/@conductionnl/nijmegen-design-tokens@1.0.0-alpha.21/dist/index.css",
             },
             {
               className: "noordoostpolder-theme",
