@@ -17,19 +17,19 @@ const IndexPage = () => {
       });
     } else {
       if (isLoggedIn()) {
-        fetch(`${context.apiUrl}/gateways/products`, {
-          credentials: 'include',
-          headers: {'Content-Type': 'application/json'},
-        })
-          .then(response => response.json())
-          .then((data) => {
-            console.log(data);
-            if (data['hydra:member'] !== undefined && data['hydra:member'] !== undefined) {
-              setProducts(data);
-            } else {
+        // fetch(`${context.apiUrl}/gateways/products`, {
+        //   credentials: 'include',
+        //   headers: {'Content-Type': 'application/json'},
+        // })
+        //   .then(response => response.json())
+        //   .then((data) => {
+        //     console.log(data);
+        //     if (data['hydra:member'] !== undefined && data['hydra:member'] !== undefined) {
+        //       setProducts(data);
+        //     } else {
               setProducts(hardcodedProducts);
-            }
-          });
+        //     }
+        //   });
       }
     }
   }, [context]);
@@ -84,7 +84,7 @@ const IndexPage = () => {
                 <div className="row">
                 {products.map((product: { name: string; description: string; id: string; }) => (
                   <div className="col-6" key={product.name}>
-                    <Card title={product.name} cardBody={function () { return(createCardBody(product))}} />
+                    <Card title={product.name} cardBody={function () { return(createCardBody(product))}} divider={false} />
                   </div>
                 ))}
                </div>
