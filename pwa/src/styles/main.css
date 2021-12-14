@@ -53,6 +53,7 @@
 
 .list {
     list-style-type: none;
+
 }
 
 .utrecht-sidenav__item {
@@ -83,14 +84,37 @@
 
 .utrecht-topnav__item {
     margin-right: 20px;
-    
+
 }
 .utrecht-topnav__item:hover * {
     cursor: pointer;
-    
+
 }
 /* End header overwrites */
 
 .sidenav-span {
     margin-right: 10px;
+}
+
+.list-icon {
+    float: right;
+}
+
+.navbar {
+    margin-top: auto;
+    display: block;
+    box-sizing: border-box;
+    text-decoration-line: none;
+    background-color: #a80a2d;
+}
+
+.utrecht-breadcrumb__link {
+    text-decoration-line: none;
+    color: #a80a2d;
+    margin-top: -8px;
+}
+
+.utrecht-breadcrumb__link:hover {
+    text-decoration-line: underline;
+    color: #a80a2d;
 }

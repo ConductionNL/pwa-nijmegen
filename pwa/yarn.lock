@@ -1051,10 +1051,10 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     "to-fast-properties" "^2.0.0"
 
-"@conductionnl/nl-design-system@^1.0.67":
-  "integrity" "sha512-MvMQCrWf0F1yOZpzsglP4qjyVIZQUbFjl/g8A5hNs/cgcBs9shJ14Gxycbg/DmmVW679MP1BmsJ+vEZbyuIJfg=="
-  "resolved" "https://registry.npmjs.org/@conductionnl/nl-design-system/-/nl-design-system-1.0.67.tgz"
-  "version" "1.0.67"
+"@conductionnl/nl-design-system@^1.0.74":
+  "integrity" "sha512-cFrbFWFnnbaK722eiIqk2VcAj2vjAcmOF0bbAGNgXNJukg0UtDjKnEv3HarHABwpWGl9uLxVGlfSFUH4VDOjbg=="
+  "resolved" "https://registry.npmjs.org/@conductionnl/nl-design-system/-/nl-design-system-1.0.75.tgz"
+  "version" "1.0.75"
   dependencies:
     "@types/lodash" "^4.14.177"
     "@types/react" "^17.0.37"
@@ -5606,6 +5606,11 @@
   "integrity" "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
+
+"fsevents@~2.3.2":
+  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
+  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  "version" "2.3.2"
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
