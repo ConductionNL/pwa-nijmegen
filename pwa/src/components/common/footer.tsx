@@ -1,14 +1,13 @@
 import * as React from "react";
 import {Link} from "gatsby";
 import {
-  BottomNavigation,
   BreakpointBottomNavigation
 } from "@conductionnl/nl-design-system/lib/BottomNavigation/src/bottomNavigation";
+import {BottomNavigationn} from "../common/bottom";
 
 export default function Footer() {
   return (
     <>
-      {/*<div className="container">*/}
       <footer className="utrecht-page-footer">
         <div className="container">
           <div className="row">
@@ -65,23 +64,22 @@ export default function Footer() {
               </p>
             </div>
 
+            <div className="col-xs-12  col-sm-12">
+              <BottomNavigationn
+                items={[{name: 'Diensten', icon: 'fas fa-shopping-cart', link: '/products'}, {
+                  name: 'Mijn aanvragen',
+                  icon: 'fas fa-list-alt',
+                  link: '/cases'
+                }, {name: 'Mijn gegevens', icon: 'fas fa-id-card-alt', link: '/data'}, {
+                  name: 'Mijn kluis',
+                  icon: 'fas fa-lock',
+                  link: '/vault'
+                }]}
+                breakpoint={BreakpointBottomNavigation.mobile}
+              />
+            </div>
+
           </div>
-        </div>
-      </footer>
-      <footer className="utrecht-page-footer mobile">
-        <div className="container">
-          <BottomNavigation
-            items={[{name: 'Diensten', icon: 'fas fa-shopping-cart', link: '/products'}, {
-              name: 'Mijn aanvragen',
-              icon: 'fas fa-list-alt',
-              link: '/cases'
-            }, {name: 'Mijn gegevens', icon: 'fas fa-id-card-alt', link: '/data'}, {
-              name: 'Mijn kluis',
-              icon: 'fas fa-lock',
-              link: '/vault'
-            }]}
-            breakpoint={BreakpointBottomNavigation.mobile}
-          />
         </div>
       </footer>
     </>
