@@ -58,12 +58,12 @@ const IndexPage = () => {
           <div className="col-6">
             <Breadcrumbs items={[{
               render: function () {
-                return "Home";
-              }, name: "home", link: "/index"
+                return "Home ";
+              }, name: "home", link: "/"
             }, {
               render: function () {
-                return "Mijn aanvragen";
-              }, name: "cases", link: "/cases"
+                return (<><i className="fas fa-chevron-right"/> Mijn aanvragen</>);
+              }, name: "cases"
             }]}/>
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">
               Aanvragen
