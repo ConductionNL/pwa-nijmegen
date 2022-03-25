@@ -3,6 +3,25 @@ import { Card, Table } from "@conductionnl/nl-design-system/lib";
 import { Link } from "gatsby";
 
 export default function RegisterTable() {
+  const [context, setContext] = React.useState(null);
+  const [registers, setRegisters] = React.useState(null);
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && context === null) {
+      setContext({
+        apiUrl: window.GATSBY_API_URL,
+      });
+    } else {
+        fetch(`${context.apiUrl}/verwerkingsacties`, {
+          credentials: 'include',
+          headers: {'Content-Type': 'application/json'},
+        })
+          .then(response => response.json())
+          .then((data) => {
+            setRegisters(data)
+          });
+      }
+  }, [context]);
 
   return (
     <Card
@@ -37,7 +56,7 @@ export default function RegisterTable() {
                         },
                       },
                     ]}
-                    rows={[]}
+                    rows={registers ?? []}
                   />
             </div>
           </div>

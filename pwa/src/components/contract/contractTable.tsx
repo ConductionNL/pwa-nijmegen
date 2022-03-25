@@ -9,7 +9,7 @@ export default function ContractTable() {
   React.useEffect(() => {
     if (typeof window !== "undefined" && context === null) {
       setContext({
-        adminUrl: window.GATSBY_ADMINN_URL,
+        adminUrl: window.GATSBY_ADMIN_URL,
       });
     } else {
         fetch(`${context.adminUrl}/contracts`, {
