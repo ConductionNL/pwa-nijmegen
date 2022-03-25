@@ -62,11 +62,11 @@ const IndexPage = () => {
             </a>
           ) : (
             <Link
-              to="/contract"
+              to="/register"
               className="nijmegen-login-button">
               <div>
                 <b>
-                  CONTRACTS
+                  VERWERKINGSREGISTER
                 </b>
               </div>
             </Link>

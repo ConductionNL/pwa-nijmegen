@@ -3,7 +3,7 @@ entries:
   commonground-gateway:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-03-25T16:10:33.354948379+01:00"
+    created: "2022-03-25T18:23:34.217748027+01:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -14,27 +14,27 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 15.3.2
     description: A Helm chart for Kubernetes
-    digest: f562da7744a44b335afdb6e027c3ac9795fa2eb8d8338e4836c11ac5e435a68d
+    digest: 0f72c855cd9276b06a6eb82f4f5e1367c9eff7629de3c2671c52de6db1300d74
     name: commonground-gateway
     type: application
     urls:
-    - charts/commonground-gateway-0.1.6.tgz
-    version: 0.1.6
+    - charts/commonground-gateway-0.1.7.tgz
+    version: 0.1.7
   pwa-nijmegen:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-03-25T16:10:33.338416069+01:00"
+    created: "2022-03-25T18:23:34.205255139+01:00"
     dependencies:
     - alias: gateway
       condition: gateway.enabled
       name: commonground-gateway
-      repository: https://raw.githubusercontent.com/ConductionNL/commonground-gateway/feature-cleanup/api/helm/
-      version: 0.1.6
+      repository: https://raw.githubusercontent.com/ConductionNL/commonground-gateway/odyssey-hackathon-2022/api/helm/
+      version: 0.1.7
     description: Skeleton application for NL Design running on Gatsby
-    digest: 1788120c580c663cec6669e5475ceb6c3153df22e0f558ecff1cc6f156bad03e
+    digest: 5254615c939dc8590b2d4f4a2b225ccf6409ecd19c6ceae379ddf43f0aa54392
     name: pwa-nijmegen
     type: application
     urls:
     - pwa-nijmegen-0.1.1.tgz
     version: 0.1.1
-generated: "2022-03-25T16:10:33.322046398+01:00"
+generated: "2022-03-25T18:23:34.191867032+01:00"

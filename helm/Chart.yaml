@@ -25,6 +25,6 @@ appVersion: 0.1.0
 dependencies:
   - name: commonground-gateway
     alias: gateway
-    version: 0.1.6
-    repository: https://raw.githubusercontent.com/ConductionNL/commonground-gateway/feature-cleanup/api/helm/
+    version: 0.1.7
+    repository: https://raw.githubusercontent.com/ConductionNL/commonground-gateway/odyssey-hackathon-2022/api/helm/
     condition: gateway.enabled

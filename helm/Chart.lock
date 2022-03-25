@@ -1,6 +1,6 @@
 dependencies:
 - name: commonground-gateway
-  repository: https://raw.githubusercontent.com/ConductionNL/commonground-gateway/feature-cleanup/api/helm/
-  version: 0.1.6
-digest: sha256:cb25d7fc0f3581add3c5947c6bc4587610edd93dce94d995941f2def8a3227d0
-generated: "2022-03-25T15:08:10.495845894+01:00"
+  repository: https://raw.githubusercontent.com/ConductionNL/commonground-gateway/odyssey-hackathon-2022/api/helm/
+  version: 0.1.7
+digest: sha256:e63729ac078d1a5c0e6840b32c99dfaef6caf00a40a5f57f500549d774f4cb35
+generated: "2022-03-25T18:23:02.71835279+01:00"
