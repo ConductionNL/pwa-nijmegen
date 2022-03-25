@@ -7,12 +7,6 @@ export default function ContractTable() {
   const [contracts, setContracts] = React.useState(null);
 
   React.useEffect(() => {
-    if (contracts !== null) {
-      setContracts([{ id: '1234', application: {name: 'Kiss application'}, user: '4cc436c4-e45f-4e7f-a37c-abc9f5b3edf2', appSignedDate: '2020/12/12 12:15:05', userSignedDate: '2020/12/12 12:15:05'}]);
-    }
-  }, [contracts]);
-
-  React.useEffect(() => {
     if (typeof window !== "undefined" && context === null) {
       setContext({
         adminUrl: window.GATSBY_ADMIN_URL,
@@ -27,7 +21,7 @@ export default function ContractTable() {
         })
           .then(response => response.json())
           .then((data) => {
-            setContracts(data)
+            setContracts(data["hydra:member"])
           });
       }
   }, [context]);
@@ -79,7 +73,7 @@ export default function ContractTable() {
                         },
                       },
                     ]}
-                    rows={[{ id: '1234', application: {name: 'Kiss application'}, user: '4cc436c4-e45f-4e7f-a37c-abc9f5b3edf2', appSignedDate: '', userSignedDate: ''}]}
+                    rows={contracts}
                   />
               }
             </div>

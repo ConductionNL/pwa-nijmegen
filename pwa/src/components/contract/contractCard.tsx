@@ -11,13 +11,6 @@ export const ContractCard: React.FC<ContractCardProps> = ({ id }) => {
   const [context, setContext] = React.useState(null);
   const [contract, setContract] = React.useState(null);
 
-  
-  React.useEffect(() => {
-    if (contract !== null) {
-      setContract({ id: '1234', application: {name: 'Kiss application'}, user: '4cc436c4-e45f-4e7f-a37c-abc9f5b3edf2', appSignedDate: '2020/12/12 12:15:05', userSignedDate: '2020/12/12 12:15:05'});
-    }
-  }, [contract]);
-
   React.useEffect(() => {
     if (typeof window !== "undefined" && context === null) {
       setContext({
@@ -26,7 +19,10 @@ export const ContractCard: React.FC<ContractCardProps> = ({ id }) => {
     } else {
         fetch(`${context.adminUrl}/contracts/${id}`, {
           credentials: 'include',
-          headers: {'Content-Type': 'application/json'},
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'c3fbb3a8-9f94-4679-b204-31e80d853d68'
+          },
         })
           .then(response => response.json())
           .then((data) => {
@@ -37,21 +33,21 @@ export const ContractCard: React.FC<ContractCardProps> = ({ id }) => {
 
   return (
       <Card
-        title={"Sign contract for Kiss application"}
-        cardHeader={function () {
-          return (
-           <h4>{''} </h4>
-          );
-        }}
+        title={contract?.application.name}
         cardBody={function () {
           return (
             <div className="row">
               <div className="col-12">
                 <b>Do you agree to these grants: </b>
+                <br/>
                 <ul>
-                  <li>GET.ingeschrevenpersonen.address</li>
-                  <li>GET.ingeschrevenpersonen.email</li>
-                  <li>GET.ingeschrevenpersonen.phone</li>
+                {
+                  contract?.grants.map((value, idx) => {
+                    return (
+                      <li key={idx}>{value}</li>
+                    )
+                  })
+                }
                 </ul>
                 <br/>
                 <b>Purpose: Klantgegevens ophalen</b>
