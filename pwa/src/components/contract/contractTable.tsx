@@ -7,6 +7,12 @@ export default function ContractTable() {
   const [contracts, setContracts] = React.useState(null);
 
   React.useEffect(() => {
+    if (contracts !== null) {
+      setContracts([{ id: '1234', application: {name: 'Kiss application'}, user: '4cc436c4-e45f-4e7f-a37c-abc9f5b3edf2', appSignedDate: '2020/12/12 12:15:05', userSignedDate: '2020/12/12 12:15:05'}]);
+    }
+  }, [contracts]);
+
+  React.useEffect(() => {
     if (typeof window !== "undefined" && context === null) {
       setContext({
         adminUrl: window.GATSBY_ADMIN_URL,
@@ -30,6 +36,9 @@ export default function ContractTable() {
         return (
           <div className="row">
             <div className="col-12">
+
+              {
+                contracts &&
                   <Table
                     columns={[
                       {
@@ -49,7 +58,7 @@ export default function ContractTable() {
                       },
                       {
                         headerName: "User signed at",
-                        field: "userSignedAt",
+                        field: "userSignedDate",
                       },
                       {
                         field: "id",
@@ -57,7 +66,7 @@ export default function ContractTable() {
                         renderCell: (item: { id: string }) => {
                           return (
                             <div className="utrecht-link d-flex justify-content-end">
-                              <Link className="utrecht-link d-flex justify-content-end" to={`/contracts/${item.id}`}>
+                              <Link className="utrecht-link d-flex justify-content-end" to={`/contract/${item.id}`}>
                                 <button className="utrecht-button btn-sm btn-success">
                                  Edit
                                 </button>
@@ -67,8 +76,9 @@ export default function ContractTable() {
                         },
                       },
                     ]}
-                    rows={contracts ?? [{application: {name: 'No results found'}, user: '', appSignedDate: '',userSignedAt: '' }]}
+                    rows={[{ id: '1234', application: {name: 'Kiss application'}, user: '4cc436c4-e45f-4e7f-a37c-abc9f5b3edf2', appSignedDate: '', userSignedDate: ''}]}
                   />
+              }
             </div>
           </div>
         );
