@@ -14,7 +14,10 @@ export default function ContractTable() {
     } else {
         fetch(`${context.adminUrl}/contracts`, {
           credentials: 'include',
-          headers: {'Content-Type': 'application/json'},
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'c3fbb3a8-9f94-4679-b204-31e80d853d68'
+        },
         })
           .then(response => response.json())
           .then((data) => {
