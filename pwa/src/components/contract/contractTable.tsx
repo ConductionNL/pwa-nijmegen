@@ -41,7 +41,7 @@ export default function ContractTable() {
                       },
                       {
                         headerName: "Signed Date",
-                        field: "dateSigned",
+                        field: "userSignedDate",
                         renderCell: (item: { dateSigned: string }) => new Date(item.dateSigned).toLocaleString("nl-NL"),
                       },
                       {

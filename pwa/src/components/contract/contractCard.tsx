@@ -8,6 +8,25 @@ interface ContractCardProps {
 }
 
 export const ContractCard: React.FC<ContractCardProps> = ({ id }) => {
+  const [context, setContext] = React.useState(null);
+  const [contract, setContract] = React.useState(null);
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && context === null) {
+      setContext({
+        adminUrl: window.GATSBY_ADMIN_URL,
+      });
+    } else {
+        fetch(`${context.adminUrl}/contracts/${id}`, {
+          credentials: 'include',
+          headers: {'Content-Type': 'application/json'},
+        })
+          .then(response => response.json())
+          .then((data) => {
+            setContract(data)
+          });
+      }
+  }, [context]);
 
   return (
       <Card
