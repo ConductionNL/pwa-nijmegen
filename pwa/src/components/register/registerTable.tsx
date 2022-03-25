@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Card, Table } from "@conductionnl/nl-design-system/lib";
-import { Link } from "gatsby";
 
 export default function RegisterTable() {
   const [context, setContext] = React.useState(null);
@@ -33,27 +32,17 @@ export default function RegisterTable() {
                   <Table
                     columns={[
                       {
-                        headerName: "Name",
-                        field: "name",
+                        headerName: "Verwerking naam",
+                        field: "verwerkingNaam",
                       },
                       {
-                        headerName: "Description",
-                        field: "description",
+                        headerName: "Handeling Naam",
+                        field: "handelingNaam",
                       },
                       {
-                        field: "id",
-                        headerName: " ",
-                        renderCell: (item: { id: string }) => {
-                          return (
-                            <div className="utrecht-link d-flex justify-content-end">
-                              <Link className="utrecht-link d-flex justify-content-end" to={`/endpoints/${item.id}`}>
-                                <button className="utrecht-button btn-sm btn-success">
-                                 Edit
-                                </button>
-                              </Link>
-                            </div>
-                          );
-                        },
+                        headerName: "Tijdstip",
+                        field: "tijdstip",
+                        renderCell: (item: { tijdstip: string }) => new Date(item.tijdstip).toLocaleString("nl-NL"),
                       },
                     ]}
                     rows={registers ?? []}
