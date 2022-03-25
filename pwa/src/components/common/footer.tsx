@@ -1,9 +1,5 @@
 import * as React from "react";
 import {Link} from "gatsby";
-import {
-  BreakpointBottomNavigation
-} from "@conductionnl/nl-design-system/lib/BottomNavigation/src/bottomNavigation";
-// import {BottomNavigationn} from "../common/bottom";
 
 export default function Footer() {
   return (
@@ -63,22 +59,6 @@ export default function Footer() {
                 Vrijdag: 9.00 - 17.00
               </p>
             </div>
-
-            {/* <div className="col-xs-12  col-sm-12">
-              <BottomNavigationn
-                items={[{name: 'Diensten', icon: 'fas fa-shopping-cart', link: '/products'}, {
-                  name: 'Mijn aanvragen',
-                  icon: 'fas fa-list-alt',
-                  link: '/cases'
-                }, {name: 'Mijn gegevens', icon: 'fas fa-id-card-alt', link: '/data'}, {
-                  name: 'Mijn kluis',
-                  icon: 'fas fa-lock',
-                  link: '/vault'
-                }]}
-                breakpoint={BreakpointBottomNavigation.mobile}
-              />
-            </div> */}
-
           </div>
         </div>
       </footer>
