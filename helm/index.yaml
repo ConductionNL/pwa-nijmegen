@@ -3,7 +3,7 @@ entries:
   commonground-gateway:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-03-25T16:06:28.711267415+01:00"
+    created: "2022-03-25T16:10:33.354948379+01:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -20,27 +20,10 @@ entries:
     urls:
     - charts/commonground-gateway-0.1.6.tgz
     version: 0.1.6
-  nl-design-skeleton-gatsby:
-  - apiVersion: v2
-    appVersion: 0.1.0
-    created: "2022-03-25T16:06:28.658264034+01:00"
-    dependencies:
-    - alias: gateway
-      condition: gateway.enabled
-      name: commonground-gateway
-      repository: https://raw.githubusercontent.com/ConductionNL/commonground-gateway/master/api/helm/
-      version: 0.1.2
-    description: Skeleton application for NL Design running on Gatsby
-    digest: 3e948e40e389b8f79c8ec71025624d6bd82c59996afef2ed23b5c6172b960841
-    name: nl-design-skeleton-gatsby
-    type: application
-    urls:
-    - nl-design-skeleton-gatsby-0.1.0.tgz
-    version: 0.1.0
   pwa-nijmegen:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-03-25T16:06:28.696575361+01:00"
+    created: "2022-03-25T16:10:33.338416069+01:00"
     dependencies:
     - alias: gateway
       condition: gateway.enabled
@@ -48,10 +31,10 @@ entries:
       repository: https://raw.githubusercontent.com/ConductionNL/commonground-gateway/feature-cleanup/api/helm/
       version: 0.1.6
     description: Skeleton application for NL Design running on Gatsby
-    digest: 23011185f598b170e72be77aae3ef638e7ae5703bc67838be0b22c6ff1bf5c75
+    digest: 1788120c580c663cec6669e5475ceb6c3153df22e0f558ecff1cc6f156bad03e
     name: pwa-nijmegen
     type: application
     urls:
     - pwa-nijmegen-0.1.1.tgz
     version: 0.1.1
-generated: "2022-03-25T16:06:28.631577303+01:00"
+generated: "2022-03-25T16:10:33.322046398+01:00"
