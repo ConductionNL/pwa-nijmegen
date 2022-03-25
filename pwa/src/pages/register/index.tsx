@@ -1,12 +1,10 @@
 import * as React from "react";
 import Layout from "../../components/common/layout";
-import {List} from "@conductionnl/nl-design-system/lib/List/src/list";
-import {Accordion} from "@conductionnl/nl-design-system/lib/Accordion/src/accordion";
 import {MainActionMenu} from "../../components/common/actionMenu";
 import {getUser, isLoggedIn} from "../../services/auth";
 import {Breadcrumbs} from "@conductionnl/nl-design-system/lib/Breadcrumbs/src/breadcrumbs";
-import { Card } from "@conductionnl/nl-design-system/lib/Card/src/card";
 import "../../styles/main.css"
+import RegisterTable from "../../components/register/registerTable";
 
 const Index = () => {
   const [context, setContext] = React.useState(null);
@@ -55,7 +53,7 @@ const Index = () => {
             <div className="col-2">
               <MainActionMenu />
             </div>
-            <div className="col-md-6 col-sm-12">
+            <div className="col-md-10 col-sm-12">
               <Breadcrumbs items={[{
                 render: function () {
                   return "Home ";
@@ -65,11 +63,8 @@ const Index = () => {
                   return (<><i className="fas fa-chevron-right"/> Verwerkingsregister</>);
                 }, name: "data"
               }]}/>
-              <h4 className="utrecht-heading-1">Verwerkingsregister</h4>
               <br/>
-              <>
-               table hier
-              </>
+             <RegisterTable />
             </div>
           </div>
         </div>
