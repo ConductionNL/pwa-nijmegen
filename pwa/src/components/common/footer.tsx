@@ -3,7 +3,7 @@ import {Link} from "gatsby";
 import {
   BreakpointBottomNavigation
 } from "@conductionnl/nl-design-system/lib/BottomNavigation/src/bottomNavigation";
-import {BottomNavigationn} from "../common/bottom";
+// import {BottomNavigationn} from "../common/bottom";
 
 export default function Footer() {
   return (
@@ -64,7 +64,7 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="col-xs-12  col-sm-12">
+            {/* <div className="col-xs-12  col-sm-12">
               <BottomNavigationn
                 items={[{name: 'Diensten', icon: 'fas fa-shopping-cart', link: '/products'}, {
                   name: 'Mijn aanvragen',
@@ -77,7 +77,7 @@ export default function Footer() {
                 }]}
                 breakpoint={BreakpointBottomNavigation.mobile}
               />
-            </div>
+            </div> */}
 
           </div>
         </div>
