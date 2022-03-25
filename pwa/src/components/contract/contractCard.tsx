@@ -1,14 +1,7 @@
 import * as React from "react";
 import {
-  GenericInputComponent,
-  TextareaGroup,
-  Spinner,
   Card,
-  Accordion,
-  Modal,
 } from "@conductionnl/nl-design-system/lib";
-import { Link } from "gatsby";
-import { navigate } from "gatsby-link";
 
 interface ContractCardProps {
   id?: string;
