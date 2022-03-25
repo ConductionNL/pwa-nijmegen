@@ -8,6 +8,7 @@ pwa:
     # Overrides the image tag whose default is the chart appVersion.
     tag: "dev"
   apiUrl: "apiURLtest"
+  adminUrl: ""
   meUrl: ""
   baseUrl: ""
   frontendUrl: ""
