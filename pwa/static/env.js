@@ -1,8 +1,8 @@
 window.GATSBY_API_URL = "https://gateway.common-ground.dev/api";
 window.GATSBY_ADMIN_URL = "https://gateway.common-ground.dev/admin";
-window.GATSBY_ME_URL = "http://localhost/me";
+window.GATSBY_ME_URL = "https://gateway.common-ground.dev/me";
 window.GATSBY_BASE_URL = "https://gateway.common-ground.dev";
-window.GATSBY_FRONTEND_URL = "http://localhost:8000";
+window.GATSBY_FRONTEND_URL = "https://odyssey.commonground.nu";
 window.GATSBY_ORGANIZATION = "001516814";
 window.GATSBY_REDIRECT_URL = "null";
 window.GATSBY_DEFAULT_THEME = "nijmegen";
