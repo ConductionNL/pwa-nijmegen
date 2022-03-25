@@ -18,8 +18,8 @@ export default function RegisterTable() {
                         field: "name",
                       },
                       {
-                        headerName: "Path",
-                        field: "path",
+                        headerName: "Description",
+                        field: "description",
                       },
                       {
                         field: "id",

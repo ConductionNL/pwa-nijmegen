@@ -3,6 +3,25 @@ import { Card, Table } from "@conductionnl/nl-design-system/lib";
 import { Link } from "gatsby";
 
 export default function ContractTable() {
+  const [context, setContext] = React.useState(null);
+  const [contracts, setContracts] = React.useState(null);
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && context === null) {
+      setContext({
+        adminUrl: window.GATSBY_ADMINN_URL,
+      });
+    } else {
+        fetch(`${context.adminUrl}/contracts`, {
+          credentials: 'include',
+          headers: {'Content-Type': 'application/json'},
+        })
+          .then(response => response.json())
+          .then((data) => {
+            setContracts(data)
+          });
+      }
+  }, [context]);
 
   return (
     <Card
@@ -18,8 +37,8 @@ export default function ContractTable() {
                         field: "name",
                       },
                       {
-                        headerName: "Path",
-                        field: "path",
+                        headerName: "Description",
+                        field: "description",
                       },
                       {
                         field: "id",
@@ -37,7 +56,7 @@ export default function ContractTable() {
                         },
                       },
                     ]}
-                    rows={[]}
+                    rows={contracts ?? []}
                   />
             </div>
           </div>
