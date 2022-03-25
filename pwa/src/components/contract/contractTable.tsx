@@ -33,12 +33,16 @@ export default function ContractTable() {
                   <Table
                     columns={[
                       {
-                        headerName: "Name",
-                        field: "name",
+                        headerName: "Application",
+                        field: "application",
+                        valueFormatter: (item: { name: string }) => {
+                          return item ? item.name : "";
+                        },
                       },
                       {
-                        headerName: "Description",
-                        field: "description",
+                        headerName: "Signed Date",
+                        field: "dateSigned",
+                        renderCell: (item: { dateSigned: string }) => new Date(item.dateSigned).toLocaleString("nl-NL"),
                       },
                       {
                         field: "id",
@@ -46,7 +50,7 @@ export default function ContractTable() {
                         renderCell: (item: { id: string }) => {
                           return (
                             <div className="utrecht-link d-flex justify-content-end">
-                              <Link className="utrecht-link d-flex justify-content-end" to={`/endpoints/${item.id}`}>
+                              <Link className="utrecht-link d-flex justify-content-end" to={`/contracts/${item.id}`}>
                                 <button className="utrecht-button btn-sm btn-success">
                                  Edit
                                 </button>
