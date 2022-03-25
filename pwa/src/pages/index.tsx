@@ -40,7 +40,7 @@ const IndexPage = () => {
             }
           </h1>
           <h6 className="utrecht-heading-6 utrecht-heading-6--distanced">
-            Bekijk uw gegevens, meldingen, aanvragen of uitkeringsgegevens op uw persoonlijke gemeentepagina.
+            Bekijk uw contracten en verwerkingen.
           </h6>
 
           {!isLoggedIn() ? (
@@ -62,23 +62,23 @@ const IndexPage = () => {
             </a>
           ) : (
             <Link
-              to="/data"
+              to="/contract"
               className="nijmegen-login-button">
               <div>
                 <b>
-                  MIJN GEGEVENS
+                  CONTRACTS
                 </b>
               </div>
             </Link>
           )}
 
           <br />
-
+{/* 
           <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
             Wat moet u weten
-          </h4>
+          </h4> */}
 
-          <p className="utrecht-paragraph">
+          {/* <p className="utrecht-paragraph">
             In Mijn Nijmegen vindt u:
           </p>
 
@@ -87,7 +87,7 @@ const IndexPage = () => {
             <li className="utrecht-unordered-list__item">Gegevens over uw diensten</li>
             <li className="utrecht-unordered-list__item">Gegevens over uw zaken</li>
             <li className="utrecht-unordered-list__item">Uw informatie in uw kluis</li>
-          </ul>
+          </ul> */}
 
         </div>
       </main>

@@ -40,9 +40,16 @@ export default function ContractTable() {
                         },
                       },
                       {
-                        headerName: "Signed Date",
-                        field: "userSignedDate",
-                        renderCell: (item: { dateSigned: string }) => new Date(item.dateSigned).toLocaleString("nl-NL"),
+                        headerName: "User",
+                        field: "user",
+                      },
+                      {
+                        headerName: "App signed at",
+                        field: "appSignedDate",
+                      },
+                      {
+                        headerName: "User signed at",
+                        field: "userSignedAt",
                       },
                       {
                         field: "id",
@@ -60,7 +67,7 @@ export default function ContractTable() {
                         },
                       },
                     ]}
-                    rows={contracts ?? []}
+                    rows={contracts ?? [{application: {name: 'No results found'}, user: '', appSignedDate: '',userSignedAt: '' }]}
                   />
             </div>
           </div>

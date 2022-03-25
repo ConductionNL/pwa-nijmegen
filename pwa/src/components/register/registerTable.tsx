@@ -32,12 +32,16 @@ export default function RegisterTable() {
                   <Table
                     columns={[
                       {
-                        headerName: "Verwerking naam",
-                        field: "verwerkingNaam",
+                        headerName: "Vertrouwelijkheid",
+                        field: "vertrouwelijkheid",
                       },
                       {
-                        headerName: "Handeling Naam",
-                        field: "handelingNaam",
+                        headerName: "Bewaartermijn",
+                        field: "bewaartermijn",
+                      },
+                      {
+                        headerName: "Gegevensbron",
+                        field: "gegevensbron",
                       },
                       {
                         headerName: "Tijdstip",
