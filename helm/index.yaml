@@ -3,7 +3,7 @@ entries:
   commonground-gateway:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-11-12T07:05:18.1965402+01:00"
+    created: "2022-03-25T15:08:32.212895758+01:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -14,16 +14,16 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 15.3.2
     description: A Helm chart for Kubernetes
-    digest: 2c2091d5eacc5738a7500dcfc6161cb73005a7479a1c22078c077e30fcf49d1e
+    digest: f562da7744a44b335afdb6e027c3ac9795fa2eb8d8338e4836c11ac5e435a68d
     name: commonground-gateway
     type: application
     urls:
-    - charts/commonground-gateway-0.1.2.tgz
-    version: 0.1.2
-  pwa-nijmegen:
+    - charts/commonground-gateway-0.1.6.tgz
+    version: 0.1.6
+  nl-design-skeleton-gatsby:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2021-11-12T07:05:18.1350792+01:00"
+    created: "2022-03-25T15:08:32.175983319+01:00"
     dependencies:
     - alias: gateway
       condition: gateway.enabled
@@ -32,9 +32,26 @@ entries:
       version: 0.1.2
     description: Skeleton application for NL Design running on Gatsby
     digest: 3e948e40e389b8f79c8ec71025624d6bd82c59996afef2ed23b5c6172b960841
+    name: nl-design-skeleton-gatsby
+    type: application
+    urls:
+    - nl-design-skeleton-gatsby-0.1.0.tgz
+    version: 0.1.0
+  pwa-nijmegen:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-03-25T15:08:32.199483335+01:00"
+    dependencies:
+    - alias: gateway
+      condition: gateway.enabled
+      name: commonground-gateway
+      repository: https://raw.githubusercontent.com/ConductionNL/commonground-gateway/feature-cleanup/api/helm/
+      version: 0.1.6
+    description: Skeleton application for NL Design running on Gatsby
+    digest: c118ef2abda3df5695deb8204de35d6cf3288e561d9dca1f3224b711a20da373
     name: pwa-nijmegen
     type: application
     urls:
-    - pwa-nijmegen-0.1.0.tgz
-    version: 0.1.0
-generated: "2021-11-12T07:05:17.9166608+01:00"
+    - pwa-nijmegen-0.1.1.tgz
+    version: 0.1.1
+generated: "2022-03-25T15:08:32.155358373+01:00"
